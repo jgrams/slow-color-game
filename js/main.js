@@ -1,23 +1,30 @@
-const popTypes = { R: { prod: 2, con: 1 }, G: { prod: 3, con: 2 }, B: { prod: 2, con: 1 } };
-const stockPile = {};
 const popArea = 100;
+const board = document.getElementById("game-board");
 
 function makeBoardId(number) {
     return "board-square-" + number;
 }
 
-function addSquare(index) {
+function setBoardGridWidth() {
+    let value = "repeat(" + parseInt(Math.sqrt(popArea)) + ", minmax(0, 1fr))";
+    board.style.gridTemplateColumns = value;
+    board.style.gridTemplateRows = value;
+}
+
+function addSquare(element, index) {
     let a = document.createElement("div");
     a.classList.add("population-square");
+    a.dataset.currentPopulation = "";
     a.id = makeBoardId(index);
-    document.getElementById("game-board").appendChild(a);
+    element.appendChild(a);
 }
 
 function makePopulationLocation() {
-    Array.from({ length: popArea }, (_, i) => addSquare(i));
+    Array.from({ length: popArea }, (_, i) => addSquare(board, i));
 }
 
 function createBoard() {
+    setBoardGridWidth();
     makePopulationLocation();
 }
 

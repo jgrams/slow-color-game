@@ -1,16 +1,18 @@
-header {}
-footer {}
-
 .background {
     background-color: antiquewhite;
 }
 
 .board {
     display: grid;
+    grid-gap: 6px;
+    width: 70vh;
+    height: 70vh;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .population-square {
-    border: 1px solid black;
-    height: 1rem;
-    width: 1rem;
+    border: 2px solid black;
+    height: 100%;
+    width: 100%;
 }
