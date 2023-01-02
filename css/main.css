@@ -16,3 +16,15 @@
     height: 100%;
     width: 100%;
 }
+
+.population-square[data-current-population="R"] {
+    background-color: red;
+}
+
+.population-square[data-current-population="G"] {
+    background-color: green;
+}
+
+.population-square[data-current-population="B"] {
+    background-color: blue;
+}
